@@ -61,3 +61,22 @@ R 4.0
 0.858620 0.028054 0.008106 0.053846 0.051374 
 0.955420 0.008846 0.002556 0.016979 0.016199 
 ```
+
+
+## vulnerability.cpp
+This simply computes the manhattan distance vulnerability (limited guesses version).
+
+Here "distribution-strategy" means a strategy that is a distribution: set the value of the secret according to the distribution, regardless of anything else (in particular this ignores the last value of the password when computing the next one).
+
+The input format for this program is the output of "convert.cpp" followed by the number of distribution-strategies, the number of secrets per distribution, and the distributions themselves. Example with 5 possible strategy-distributions on four passwords (the first one gives equal probability to all passwords, and the third always sets the password to 0):
+
+```
+5 4
+0.25 0.25 0.25 0.25
+0.35 0.35 0.05 0.25
+1.00 0.00 0.00 0.00
+0.50 0.15 0.10 0.25
+0.33 0.33 0.33 0.01
+```
+
+This is assuming that the name of the strategy variable will be "strat", and that the adversary can only guess by using one of the possible distribution-strategies. The strategy gain will then be the manhattan distance between strategies, instead of the bayesian gain function (which is the default of Kuifje).
