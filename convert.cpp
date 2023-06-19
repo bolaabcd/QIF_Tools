@@ -15,33 +15,27 @@ int main() {
 		string line = "";
 		getline(cin,line);
 		vector<double> outers;
-		vector<vector<double>> inners;
-		vector<string> inner_vals;
+		vector<map<string,double>> inners;
+		set<string> inner_vals;
 		while(line.size() > 0 and line[0] != '>') {
 			if(line[0] == ' ') {
 				string inner_v = line.substr(12,8);
 				double inner = atof(inner_v.c_str());
-				inners.back().push_back(inner);
 				string inner_name = "";
 				inner_name = line.substr(22);
-				if(inner_vals.size() < inners.back().size())
-					inner_vals.push_back(inner_name);
-				else
-					assert(inner_vals[inners.back().size()-1] == inner_name);
+				inner_vals.insert(inner_name);
+				inners.back()[inner_name] = inner;
 			} else {
 				string outer_v = line.substr(0,8);
 				double outer = atof(outer_v.c_str());
 				outers.push_back(outer);
-				string inner_v = line.substr(12,8);
+				string inner_v = line.substr(11,8);
 				double inner = atof(inner_v.c_str());
-				inners.push_back({inner});
 
 				string inner_name = "";
 				inner_name = line.substr(22);
-				if(inner_vals.size() < inners.back().size())
-					inner_vals.push_back(inner_name);
-				else
-					assert(inner_vals[inners.back().size()-1] == inner_name);
+				inners.push_back(map<string,double>{{inner_name,inner}});
+				inner_vals.insert(inner_name);
 			}
 			line = "";
 			getline(cin,line);
@@ -49,17 +43,16 @@ int main() {
 		
 		assert(inners.size() != 0);
 		sstr << name << endl;
-		sstr << outers.size() << ' ' << inners[0].size() << endl;
-		for(int i = 1; i < inners.size(); i++)
-			assert(inners[i].size() == inners[0].size());
-		for(int i = 0; i < inner_vals.size(); i++)
-			sstr << inner_vals[i] << endl;
+		sstr << inner_vals.size() << ' ' << outers.size() << endl;
+		for(string s : inner_vals)
+			sstr << s << endl;
 		for(int i = 0; i < outers.size(); i++)
 			sstr << outers[i] << ' ';
 		sstr << endl;
 		for(int i = 0; i < inners.size(); i++) {
-			for(int j = 0; j < inners[i].size(); j++)
+			for(string j: inner_vals) {
 				sstr << inners[i][j] << ' ';
+			}
 			sstr << endl;
 		}
 		//sstr << endl;
@@ -74,9 +67,9 @@ int main() {
 number of cases
 
 name
-number of inners, number of elements per inner
+number of inner elements, number of inners
 names of each inner element
-Probability of each outer (space-separated)
+Probability of each inner (space-separated)
 space-separeted inner1
 space-separeted inner2
 .
