@@ -80,3 +80,56 @@ The input format for this program is the output of "convert.cpp" followed by the
 ```
 
 This is assuming that the name of the strategy variable will be "strat", and that the adversary can only guess by using one of the possible distribution-strategies. The strategy gain will then be the manhattan distance between strategies, instead of the bayesian gain function (which is the default of Kuifje).
+
+
+## greedy\_adversary\_simulator
+These are scripts for emulating best choices choices we can make against a greedy adversary, and then plot the results. 
+
+Keep in mind that Kuifje is at this moment not in its final version, so there might be some errors. Also, if you decide to change something make sure all the `.kf` code really execute, as the Kuifje Compiler at this point might not print any errors even if something went worng.
+
+### greedy\_adversary\_simulator/roda\_ps.sh
+This is the script that runs everything. It requires all other files in `greedy\_adversary\_simulator` that are listed here. We will explay what all these do at once here, some of them are copied and then modified by this script.
+
+```sh
+colors=('gray' 'blue' 'red' 'green' 'orange' 'black' 'pink' 'purple')
+steps=(50  50   50    25    25     25     25     50)
+vals1=(1   1    1     1     1      1      1      0 )
+vals2=(1   2    4     8     16     32     64     1 )
+```
+
+These variables control the result. Every column will result in one graph in the final plot. 
+
+`colors` should be self-explanatory.
+`steps` specify how many steps of applying the strategy will be simulated.
+`vals1` specify the first value we are going to use as a parameter.
+`vals2` specify the second value we are going to use as a parameter.
+
+For each pair `val1,val2`, this will make a Kuifje program that is composed of `ini.kf`, concatenated with `mid.kf` with VAL replaced by the probability that nothing will leak, and with `fincom.kf` at the end and also with `fimsem.kf` (the names are in portuguese, "fim" means end, "com" means "with" and "sem" means "without") at the end, which will see what happens with and without applying the strategy at the end. In the file `fimcom.kf`, `NUMCHANCEUNI` will be replaced by the value of `val1` and `DENOMCHANCEUNI` by the value `val2`, as these a re meant to be parameters for exploring the behaviour of different strategies.
+
+If applying the strategy decreases the vulnerability, then we want to apply it, otherwise we don't.
+
+If we want to apply it, then we edit the `ini.kf` file for the channel to leak once and then the strategy be applied, after whatever `ini.kf` was already doing, and repeat everything to simulate one more step of the simulation. 
+
+If we don't want to apply the strategy, we just proceed to the next step, increasing the counter for the number of times to leak the channel from x=1 to x=2: VAL is computed as the probability that nothing will leak given that the channel has been applied x times (in parallel). Currently, the channel we are using has `15/16` probability of not leaking anything after one time step and `1/16` probability of revealing the secret, thus having `(15/16)^x` probability of not leaking anything after `x` parallel compositions.
+
+This repeats untill the number of time steps specified are completed, and the script saves the final secret vulnerability at each step in a file.
+
+Finally, the evolution of the vulnerabilities are ploted in one graph per pair `val1,val2` specified, with the colors specified.
+
+### greedy\_adversary\_simulator/roda\_p.sh
+This is the code that simulates the decisions of when to apply and when to not apply the strategy (refer to `roda_ps.kf` to see what this means).
+
+### greedy\_adversary\_simulator/plota\_p.py
+This is a python code that plots the results (refer to `roda_ps.kf` to see what this means). A copy of it is created and later modified by `roda_ps.kf`.
+
+### greedy\_adversary\_simulator/ini.kf
+This is the initial part of the code, I am using it to simply initialize the secret and any possible parameters the strategy will need (refer to `roda_ps.kf` to see what this means). This will be copied and modified by `roda_ps.kf`.
+
+### greedy\_adversary\_simulator/mid.kf
+This is the part of the code that represents the channel (refer to `roda_ps.kf` to see what this means). This will be copied and modified by `roda_ps.kf`.
+
+### greedy\_adversary\_simulator/fimcom.kf
+This is the part of the code that finishes by applying the strategy (refer to `roda_ps.kf` to see what this means). This will be copied and modified by `roda_ps.kf`.
+
+### greedy\_adversary\_simulator/fimsem.kf
+This is the part of the code that finishes by not applying the strategy (refer to `roda_ps.kf` to see what this means). This basically does nothing, I'm only instatiating the variable `UVA` to be sure that the code ran until the end (sometimes the current version I'm using of Kuifje doesn't throw any error or warning if something goes wrong and the code suddenly stops running).
