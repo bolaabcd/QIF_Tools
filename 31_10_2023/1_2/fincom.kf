@@ -1,0 +1,8 @@
+// Might change gang
+uni <- uniform[0..10];
+g <- ((uni) [NUMCHANCEUNI/DENOMCHANCEUNI] (g));
+y = b + (5*g);
+// Changing building according to gang strategy (gang acts as soon as it receives the stash, adversary can't notice that the building didn't change as she could do if the stash wasn't moved when exchanged between gangs)
+b = l[y];
+y = b + (5*g);
+

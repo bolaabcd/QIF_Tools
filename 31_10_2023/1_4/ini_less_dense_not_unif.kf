@@ -1,0 +1,12 @@
+// Permutations:
+l = [
+1, 2, 3, 0, // gang 0
+1, 3, 0, 2, // gang 1
+3, 0, 1, 2 // gang 5
+];
+
+// Randomly removed 3 gangs
+
+g <- [0@(30/64),1@(27/64),2@(7/64)]; // Not uniform!
+b <- uniform[0..3];// building
+y = b + (4*g);
