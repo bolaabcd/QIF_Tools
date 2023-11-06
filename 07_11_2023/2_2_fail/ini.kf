@@ -1,0 +1,20 @@
+// Permutations:
+l = [
+1, 3, 4, 2, 0, // gang 1
+3, 2, 4, 1, 0, // gang 4
+2, 0, 3, 4, 1, // gang 6
+3, 0, 4, 2, 1, // gang 7
+3, 2, 0, 4, 1, // gang 8
+2, 3, 4, 0, 1, // gang 10
+4, 3, 0, 2, 1, // gang 11
+3, 0, 1, 4, 2, // gang 14
+4, 0, 3, 1, 2, // gang 17
+4, 2, 0, 1, 3, // gang 21
+4, 0, 1, 2, 3 // gang 23
+];
+
+// Randomly removed 13 gangs, and then there were 11.
+
+g <- uniform[0..10];// gang
+b <- uniform[0..4];// building
+y = b + (5*g);
