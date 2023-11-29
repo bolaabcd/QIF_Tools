@@ -18,6 +18,8 @@ echo -ne '' > /tmp/com.txt
 echo -ne '' > /tmp/ans$suf.txt
 echo -ne '' > /tmp/aplics$suf.txt
 
+# Se nao aplicar fica menor que num/denom, nao aplica
+
 i=1
 amt=$3 # 50 por exemplo
 for j in $(seq 1 $amt); do
@@ -25,7 +27,7 @@ for j in $(seq 1 $amt); do
     x=$(python3 -c "print('{:.7f}'.format((1-1/16)**$i))")
 
     cp /tmp/$arqini /tmp/com$j.kf
-    cat /tmp/$arqmid | sed "s/VAL/0$x/g" >> /tmp/com$j.kf
+    cat /tmp/$arqmid | sed "s/VAL/$x/g" >> /tmp/com$j.kf
     cat $arqfincom | sed "s/NUMCHANCEUNI/$pvalnum/g" | sed "s/DENOMCHANCEUNI/$pvaldenom/g" >> /tmp/com$j.kf
     echo "" >> /tmp/com$j.kf
     echo "UVA = 1;" >> /tmp/com$j.kf
@@ -39,13 +41,15 @@ for j in $(seq 1 $amt); do
     echo "UVA = 1;" >> /tmp/sem$j.kf
     cabal new-run Kuifje-compiler /tmp/sem$j.kf > /tmp/sem$j.txt
     cat /tmp/sem$j.txt | grep -A1 'Vuln y hyper' | grep -o '[0-9.]*' >> /tmp/sem.txt
+
+    limit=$(python3 -c "print($pvalnum/$pvaldenom)")
     
     vcom=$(tail -1 /tmp/com.txt)
     vsem=$(tail -1 /tmp/sem.txt)
 
-    if test $(python3 -c "print(1 if ($vcom < $vsem) else 0)") -eq 1; then
+    if test $(python3 -c "print(1 if ($vsem > $limit) else 0)") -eq 1; then
         # Aplica strat
-        cat $arqmid | sed "s/VAL/0$x/g" >> /tmp/$arqini
+        cat $arqmid | sed "s/VAL/$x/g" >> /tmp/$arqini
         cat $arqfincom | sed "s/NUMCHANCEUNI/$pvalnum/g" | sed "s/DENOMCHANCEUNI/$pvaldenom/g" >> /tmp/$arqini
         tail -1 /tmp/com.txt >> /tmp/ans$suf.txt
         echo $j >> /tmp/aplics$suf.txt
