@@ -35,7 +35,7 @@ for j in $(seq 1 $amt); do
     cat /tmp/com$j.txt | grep -A1 'Vuln y hyper' | grep -o '[0-9.]*' >> /tmp/com.txt
 
     cp /tmp/$arqini /tmp/sem$j.kf
-    cat /tmp/$arqmid | sed "s/VAL/0$x/g" >> /tmp/sem$j.kf
+    cat /tmp/$arqmid | sed "s/VAL/$x/g" >> /tmp/sem$j.kf
     cat $arqfinsem >> /tmp/sem$j.kf
     echo "" >> /tmp/sem$j.kf
     echo "UVA = 1;" >> /tmp/sem$j.kf
