@@ -63,8 +63,8 @@ for j in $(seq 1 $nsteps); do
     rm /tmp/vulnsall2.txt
 done
 
-echo $alpha $n $nsteps $logfolder/vals.txt  $logfolder/steps.txt | python3 plota_vals.py
-echo $alpha $n $nsteps $logfolder/vulns.txt $logfolder/steps.txt| python3 plota_vulns.py
+echo "$alpha"\\n"$n"\\n"$nsteps"\\n"$logfolder/vals.txt"\\n"$logfolder/steps.txt"\\n"$logfolder" | python3 plota_vals.py
+echo "$alpha"\\n"$n"\\n"$nsteps"\\n"$logfolder/vulns.txt"\\n"$logfolder/steps.txt"\\n"$logfolder" | python3 plota_vulns.py
 
 rm /tmp/pre.txt
 rm -d /tmp/cabal*
