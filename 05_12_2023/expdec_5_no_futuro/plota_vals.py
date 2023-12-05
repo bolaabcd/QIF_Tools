@@ -17,14 +17,14 @@ AMTSTEPS = nsteps
 color = 'blue'
 label = 'exp_dec'
 
-plt.ylim(0,1)
+plt.ylim(0,2.1)
 plt.xlim(1,AMTSTEPS+1)
 minor_x = list(range(1,AMTSTEPS+1))
-minor_y = [i/50 for i in range(0,51)]
+minor_y = [2.1*i/50 for i in range(0,51)]
 plt.xticks(minor_x,minor=True)
 plt.yticks(minor_y,minor=True)
 major_x = [5*i for i in range(AMTSTEPS//5+1)]
-major_y = [i/10 for i in range(0,11)]
+major_y = [2.1*i/10 for i in range(0,11)]
 plt.xticks(major_x,minor=False)
 plt.yticks(major_y,minor=False)
 plt.grid(which='minor', alpha=0.5, linestyle=':')
