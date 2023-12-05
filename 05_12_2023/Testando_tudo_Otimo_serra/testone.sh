@@ -73,7 +73,7 @@ fi
 val=$(echo "$alpha"\\n"$n"\\n"/tmp/vulns$number.txt" | python3 getval.py)
 vul1=$(cat /tmp/vulns$number.txt | head -1)
 vullast=$(cat /tmp/vulns$number.txt | tail -1)
-echo "$vullast $val $vul1 $number $n $choices" >> /tmp/vulnsall.txt
+echo "$val $vullast $vul1 $number $n $choices" >> /tmp/vulnsall.txt
 
 rm /tmp/vulns$number.txt
 # rm /tmp/sim$number.kf

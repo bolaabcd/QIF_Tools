@@ -9,11 +9,11 @@ fil = open(filename,'r')
 lins = fil.readlines()
 fil.close()
 
-tot = 0
+worst = -1
 i = 0
 for lin in lins:
     if lin == '\n':
         continue
-    tot += float(lin[:-1])*alpha**i
+    worst = max(worst,float(lin[:-1]))
     i = i+1
-print(tot)
+print(worst)
