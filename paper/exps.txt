@@ -1,0 +1,17 @@
+1) Vulnerabilidade aumentando com o tempo, e a estratégia caindo com o mesmo exemplo.
+
+2) Argumento para que aplicar a estratégia pode ser ruim: convergir pra coisa boa ou ruim, e Markov ser a prior.
+
+3) Enunciar exemplo serra
+
+4) Guloso: sempre compensa aplicar a estratégia + guloso que nunca compensa, guloso alternado simples 15.1.3
+
+5) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o mais complicado 16.2.2
+
+6) Adversário ansioso
+
+7) Serra trivial (demonstrar que guloso não faz)
+
+8) Exemplo serra boa (demonstrar é ótimo)
+
+9) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica

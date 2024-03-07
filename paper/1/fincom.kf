@@ -1,0 +1,2 @@
+kk <- uniform[0..10];
+y = ((kk) if (r == 60) else (y));
