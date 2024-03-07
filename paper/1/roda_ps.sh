@@ -16,11 +16,12 @@ done
 
 
 # UNTIL WHERE PLOT GOES (MANUAL):
-echo 'plt.xlim(1,101)' >> /tmp/plota.py
+echo 'plt.xlim(-1,101)' >> /tmp/plota.py
+echo 'plt.ylim(-0.01,1.01)' >> /tmp/plota.py
 
 
 
-echo 'plt.legend(loc="upper left")' >> /tmp/plota.py
+#echo 'plt.legend(loc="upper left")' >> /tmp/plota.py
 echo 'plt.savefig("plot.svg")' >> /tmp/plota.py
 
 python3 /tmp/plota.py
