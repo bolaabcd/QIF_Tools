@@ -2,14 +2,14 @@
 
 # Garanta que o primeiro argumento eh p (a chance que vai substituir VAL), e que os arquivos ini.kf, mid.kf, fincom.kf e finsem.kf tem os codigos adequados! mid.kf eh onde deve estar o VAL, e vamos tentar agir pra minimizar (gulosamente) a vulnerabilidade da variavel y. Usamos 7 casas decimais de precisao. O segundo argumento deve ser o sufixo dado pros nomes dos arquivos, e o terceiro deve ser a quantidade de passos.
 
-arqini='ini.kf'
-arqmid='mid.kf'
-arqfincom='fincom.kf'
-arqfinsem='finsem.kf'
+arqini='ini2.kf'
+arqmid='mid2.kf'
+arqfincom='fincom2.kf'
+arqfinsem='finsem2.kf'
 pvalnum=$1 #numerador
 pvaldenom=$2
 #suf="$pvalnum""_$pvaldenom"
-suf="conv0.1"
+suf="conv1.0"
 
 cp $arqmid /tmp/$arqmid
 cp $arqini /tmp/$arqini
