@@ -1,8 +1,8 @@
-1) Vulnerabilidade aumentando com o tempo, e a estratégia caindo com o mesmo exemplo.
+V - 1) Vulnerabilidade aumentando com o tempo, e a estratégia caindo com o mesmo exemplo.
 
-2) Argumento para que aplicar a estratégia pode ser ruim: convergir pra coisa boa ou ruim, e Markov ser a prior.
+V - 2) Argumento para que aplicar a estratégia pode ser ruim: convergir pra coisa boa ou ruim, e Markov ser a prior.
 
-3) Enunciar exemplo serra
+3) Enunciar exemplo serra (?)
 
 4) Guloso: sempre compensa aplicar a estratégia + guloso que nunca compensa, guloso alternado simples 15.1.3
 
