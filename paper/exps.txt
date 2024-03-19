@@ -2,19 +2,19 @@ V - 1) Vulnerabilidade aumentando com o tempo, e a estratégia caindo com o mesm
 
 V - 2) Argumento para que aplicar a estratégia pode ser ruim: convergir pra coisa boa ou ruim, e Markov ser a prior.
 
-3) Enunciar exemplo serra (?)
+x) Enunciar exemplo serra (?)
 
-4) Guloso: sempre compensa aplicar a estratégia (note que aplicar a estratégia sempre faz a vulnerabilidade ficar no máximo o peso da maior aresta, eu conjecturo que se o canal for do tipo vaza tudo com certa probabilidade então se a probabilidade do canal for maior que o peso da maior aresta, compensa aplicar a estratégia pra qualquer prior e portanto posterior também, se o segredo é um vértice) + guloso que nunca compensa (me parece que só se a estratégia fizer a vulnerabilidade ficar 1 isso, porque se esperar o suficiene o canal revela então nos mundos em que o grau de saída do nó é maior que 1 eventualmente vai tar sendo bom aplicar a estratégia e nos que é 1 não muda nada... Talvez então só jogar o exemplo que vira 1 mesmo e depois vira mais que 1 e fica lá, isso ilustraria que o guloso é incompleto em modelagem), guloso alternado simples 15.1.3
+V - 3) Guloso: sempre compensa aplicar a estratégia (note que aplicar a estratégia sempre faz a vulnerabilidade ficar no máximo o peso da maior aresta, eu conjecturo que se o canal for do tipo vaza tudo com certa probabilidade então se a probabilidade do canal for maior que o peso da maior aresta, compensa aplicar a estratégia pra qualquer prior e portanto posterior também, se o segredo é um vértice) + guloso que nunca compensa (me parece que só se a estratégia fizer a vulnerabilidade ficar 1 isso, porque se esperar o suficiene o canal revela então nos mundos em que o grau de saída do nó é maior que 1 eventualmente vai tar sendo bom aplicar a estratégia e nos que é 1 não muda nada... Talvez então só jogar o exemplo que vira 1 mesmo e depois vira mais que 1 e fica lá, isso ilustraria que o guloso é incompleto em modelagem), guloso alternado simples 15.1.3
 
-5) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o mais complicado 16.2.2
+V - 4) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o mais complicado 16.2.2
 
-6) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1). ACHO que vou só mencioanr esse!
+5) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1). ACHO que vou só mencioanr esse!
 
-7) Serra trivial (+demonstrar que guloso não faz serra boa)
+6) Serra trivial (+demonstrar que guloso não faz serra boa)
 
-8) Exemplo serra boa (+demonstrar é ótimo)
+7) Exemplo serra boa (+demonstrar é ótimo)
 
-9) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica
+8) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica
 
 
 
