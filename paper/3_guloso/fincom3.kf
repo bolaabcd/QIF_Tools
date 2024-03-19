@@ -1,0 +1,3 @@
+kk1 <- uniform[10..14];
+kk2 <- uniform[0..9];
+y <- ((kk1) if (y < 10) else (kk2));

@@ -8,7 +8,7 @@ V - 2) Argumento para que aplicar a estratégia pode ser ruim: convergir pra coi
 
 5) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o mais complicado 16.2.2
 
-6) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1).
+6) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1). ACHO que vou só mencioanr esse!
 
 7) Serra trivial (+demonstrar que guloso não faz serra boa)
 
