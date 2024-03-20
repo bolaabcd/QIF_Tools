@@ -18,6 +18,6 @@ V - 4) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o 
 
 
 
-Crítica: só usamos um canal praticamente...
+Crítica: só usamos um canal praticamente... Só usamos ganho de Bayes!
 
 Será que podemos raciocinar em aplicar ou não aplicar a estratégia em cada mundo dado a Hyper?

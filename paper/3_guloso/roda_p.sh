@@ -23,7 +23,7 @@ i=1
 amt=$3 # 50 por exemplo
 for j in $(seq 1 $amt); do
     echo -ne "\r$j/$amt"
-    x=$(python3 -c "print('{:.7f}'.format((1-1/4)**$i))")
+    x=$(python3 -c "print('{:.7f}'.format((1-3/5)**$i))")
 
     cp /tmp/$arqini /tmp/com$j.kf
     cat /tmp/$arqmid | sed "s/VAL/$x/g" >> /tmp/com$j.kf
