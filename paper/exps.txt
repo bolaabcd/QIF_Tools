@@ -8,13 +8,13 @@ V - 3) Guloso: sempre compensa aplicar a estratégia (note que aplicar a estrat�
 
 V - 4) Esperar um tempo e aplicar a estratégia simples até demais 15.1.2, e o mais complicado 16.2.2
 
-5) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1). ACHO que vou só mencioanr esse!
+V - 4.5) Adversário ansioso (preocupado com o tempo t+2 e a estratégia é one-use, reseta pra 10 valores depois concentra em 1). ACHO que vou só mencioanr esse!
 
-6) Serra trivial (+demonstrar que guloso não faz serra boa)
+V - 5) Serra trivial (+demonstrar que guloso não faz serra boa)
 
-7) Exemplo serra boa (+demonstrar é ótimo)
+V - 6) Exemplo serra boa (+demonstrar é ótimo)
 
-8) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica
+7) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica
 
 
 
