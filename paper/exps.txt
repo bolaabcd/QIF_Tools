@@ -14,7 +14,7 @@ V - 5) Serra trivial (+demonstrar que guloso não faz serra boa)
 
 V - 6) Exemplo serra boa (+demonstrar é ótimo)
 
-7) 15.1.6 talvez sobre pra diferenciar exponencial de guloso, médio no infinito, supremum, ordem lexicográfica
+? 7) Algo pra diferenciar exponencial de guloso (tinha anotado 15.1.6 mas acho que não), médio no infinito, supremum, ordem lexicográfica
 
 
 
